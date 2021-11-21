@@ -1,7 +1,7 @@
 type Meal {
 	title: String!
 	description: String!
-	image: String!
+	img: String!
 	tags: [String!]
 	mealType: String!
 	chef: String!
