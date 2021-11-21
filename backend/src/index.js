@@ -4,7 +4,6 @@ import dotenv from "dotenv";
 
 import { typeDefs } from './schema'
 
-console.log(`${__dirname}/typedefs/`)
 
 
 
