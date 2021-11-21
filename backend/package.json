@@ -5,7 +5,6 @@
   "main": "index.js",
   "author": "Metashaker",
   "license": "MIT",
-  "type": "module",
   "scripts": {
     "dev": "nodemon src/index.js --exec babel-node",
     "babel-version": "babel --version"

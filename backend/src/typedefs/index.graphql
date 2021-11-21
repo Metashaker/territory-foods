@@ -1,0 +1,13 @@
+type Meal {
+	title: String!
+	description: String!
+	image: String!
+	tags: [String!]
+	mealType: String!
+	chef: String!
+	price: Float!
+}
+
+type Query {
+	meals(offset: Int, limit: Int): [Meal!]
+}
