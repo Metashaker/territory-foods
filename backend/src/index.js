@@ -2,13 +2,15 @@ import { ApolloServer } from 'apollo-server'
 import { makeExecutableSchema } from '@graphql-tools/schema'
 import dotenv from "dotenv";
 
+import resolvers from './resolvers/index'
 import { typeDefs } from './schema'
 
 
 
 
 const schema = makeExecutableSchema({
-  typeDefs
+  typeDefs,
+  resolvers
 })
 const server = new ApolloServer({
   schema
