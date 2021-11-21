@@ -1,7 +1,19 @@
 import { ApolloServer } from 'apollo-server'
-console.log('entered')
+import { makeExecutableSchema } from '@graphql-tools/schema'
+import dotenv from "dotenv";
 
-const server = new ApolloServer()
+import { typeDefs } from './schema'
+
+console.log(`${__dirname}/typedefs/`)
+
+
+
+const schema = makeExecutableSchema({
+  typeDefs
+})
+const server = new ApolloServer({
+  schema
+})
 server.listen().then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`)
 })
