@@ -12,8 +12,7 @@ const resolvers = {
           }
           return data
         })
-        meals = CSVToJSON(meals).filter(meal => meal?.title)
-        console.log(meals)
+      meals = CSVToJSON(meals).filter(meal => meal?.title)
       return meals
     }
   },

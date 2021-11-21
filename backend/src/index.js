@@ -13,7 +13,11 @@ const schema = makeExecutableSchema({
   resolvers
 })
 const server = new ApolloServer({
-  schema
+  schema,
+  cors: {
+    origin: [process.env.ENVIRONMENT_URL],
+    credentials: false
+  },
 })
 server.listen().then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`)
