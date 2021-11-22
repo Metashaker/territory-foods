@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 const FooterContainer = styled.footer`
   width: 100vw;
-  position: absolute;
-  bottom: 0;
   height: auto;
   display: flex;
   flex-direction: row;
