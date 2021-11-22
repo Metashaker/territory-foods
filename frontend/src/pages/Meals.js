@@ -47,7 +47,6 @@ const MealsPage = () => {
       })
       .filter(Boolean);
     setFilteredMeals(filtMeals);
-    console.log(filteredMeals, filtMeals, typeof setFilteredMeals);
   }, [activeFilters, meals]);
 
   return (

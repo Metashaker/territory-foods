@@ -42,8 +42,6 @@ const Filters = ({ meals, setActiveFilters, activeFilters }) => {
 
   return (
     <FiltersContainer>
-      {console.log(mealTypes)}
-      {console.log(tags)}
       <FilterButton onClick={toggleTagsDropdown} isFirst>
         <p>Dietary preferences</p>
         <img src={DownIcon} alt="Down icon" />
