@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 const FooterContainer = styled.footer`
   width: 100vw;
-  position: absolute;
-  bottom: 0;
   height: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 0 10%;
+  margin-bottom: 1.5rem;
+  //margin: 1.5rem;
 
   img {
     transform: scale(0.375);
