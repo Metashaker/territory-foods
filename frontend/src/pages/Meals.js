@@ -8,7 +8,7 @@ import BannerURL from "../assets/tf-banner-darken.png";
 
 const MealsPage = () => {
   return (
-    <>
+    <div style={{ width: "100vw", overflowX: "hidden" }}>
       <Header />
       <Banner
         imageURL={BannerURL}
@@ -21,7 +21,7 @@ const MealsPage = () => {
       />
       <Filters />
       <Footer />
-    </>
+    </div>
   );
 };
 

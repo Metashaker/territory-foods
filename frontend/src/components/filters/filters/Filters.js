@@ -18,6 +18,7 @@ const Filters = () => {
     }
     setMealTypesOpen(!areMealTypesOpen);
   };
+
   return (
     <FiltersContainer>
       <FilterButton onClick={toggleTagsDropdown} isFirst>

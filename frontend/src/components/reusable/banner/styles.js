@@ -4,7 +4,7 @@ const BannerContainer = styled.div`
   height: auto;
   width: 100vw;
   background-image: ${({ imageURL }) => `url(${imageURL})`};
-  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
