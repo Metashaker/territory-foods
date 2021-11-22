@@ -1,11 +1,14 @@
 import Header from "../header";
+import Footer from "../footer";
+import { LayoutContainer } from "./styles";
 
-const Layout = () => {
+const Layout = ({ childen }) => {
   return (
-    <>
+    <LayoutContainer>
       <Header />
-      <br />
-    </>
+      {childen}
+      <Footer />
+    </LayoutContainer>
   );
 };
 

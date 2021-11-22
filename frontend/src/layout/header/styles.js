@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const HeaderContainer = styled.div`
+const HeaderContainer = styled.header`
   width: 100vw;
   height: 3.8rem;
   display: flex;
