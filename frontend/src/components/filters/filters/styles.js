@@ -10,7 +10,7 @@ const FiltersContainer = styled.div`
   justify-content: flex-start;
 `;
 
-const FilterDropdown = styled.button`
+const FilterButton = styled.button`
   background: #ffffff;
   display: flex;
   flex-direction: row;
@@ -26,4 +26,13 @@ const FilterDropdown = styled.button`
   }
 `;
 
-export { FiltersContainer, FilterDropdown };
+const FiltersDropdown = styled.div`
+  display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
+  position: absolute;
+  transform: translate(6rem, 12rem);
+  height: 20.5rem;
+  width: 21.5rem;
+  background-color: red;
+  z-index: 50;
+`;
+export { FiltersContainer, FilterButton, FiltersDropdown };
