@@ -66,7 +66,7 @@ const MealsPage = () => {
         setActiveFilters={setActiveFilters}
         activeFilters={activeFilters}
       />
-      <MealsGrid meals={filteredMeals} />
+      <MealsGrid filteredMeals={filteredMeals} meals={meals} />
       <Footer />
     </div>
   );
