@@ -9,5 +9,5 @@ type Meal {
 }
 
 type Query {
-	meals(offset: Int, limit: Int): [Meal!]
+	meals: [Meal!]
 }
