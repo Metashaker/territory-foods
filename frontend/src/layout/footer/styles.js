@@ -10,6 +10,8 @@ const FooterContainer = styled.footer`
   justify-content: center;
   align-items: center;
   padding: 0 10%;
+  margin-bottom: 1.5rem;
+  //margin: 1.5rem;
 
   img {
     transform: scale(0.375);
