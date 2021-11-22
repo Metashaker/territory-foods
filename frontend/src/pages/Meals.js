@@ -1,4 +1,5 @@
 import { useQuery } from "@apollo/client";
+import { useState, useEffect } from "react";
 
 import Header from "../layout/header";
 import Footer from "../layout/footer";
@@ -11,6 +12,14 @@ import BannerURL from "../assets/tf-banner-darken.png";
 
 const MealsPage = () => {
   const { data: meals } = useQuery(GET_MEALS);
+  const [activeFilters, setActiveFilters] = useState({
+    tags: [],
+    mealTypes: [],
+  });
+
+  useEffect(() => {
+    console.log(activeFilters);
+  }, [activeFilters, meals]);
 
   return (
     <div style={{ width: "100vw", overflowX: "hidden" }}>
@@ -24,7 +33,11 @@ const MealsPage = () => {
         title="nutrition is on the menu"
         subtitle="Our meals are designed by nutritionists and crafted by local chefs. Free of gluten, refined sugars or dairy* and responsibly sourced.  "
       />
-      <Filters meals={meals} />
+      <Filters
+        meals={meals}
+        setActiveFilters={setActiveFilters}
+        activeFilters={activeFilters}
+      />
       <Footer />
     </div>
   );

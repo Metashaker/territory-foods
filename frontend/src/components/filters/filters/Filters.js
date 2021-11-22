@@ -7,7 +7,7 @@ import {
 } from "./styles";
 import DownIcon from "../../../assets/tf-down.svg";
 
-const Filters = ({ meals }) => {
+const Filters = ({ meals, setActiveFilters, activeFilters }) => {
   const [areTagsOpen, setTagsOpen] = useState(false);
   const [areMealTypesOpen, setMealTypesOpen] = useState(false);
   const [tags, setTags] = useState([]);
@@ -58,7 +58,19 @@ const Filters = ({ meals }) => {
                     id={tag}
                     name={tag}
                     value={tag}
-                    onClick={() => setTagsOpen(true)}
+                    onClick={() => {
+                      if (activeFilters.tags.includes(tag)) {
+                        setActiveFilters({
+                          tags: activeFilters.tags.filter((tg) => tg !== tag),
+                          mealTypes: activeFilters.mealTypes,
+                        });
+                      } else {
+                        setActiveFilters({
+                          tags: [...activeFilters.tags, tag],
+                          mealTypes: activeFilters.mealTypes,
+                        });
+                      }
+                    }}
                   />
                   <label htmlFor={tag}>{tag}</label>
                 </CheckboxesContainer>
@@ -82,7 +94,21 @@ const Filters = ({ meals }) => {
                     id={mt}
                     name={mt}
                     value={mt}
-                    onClick={() => console.log("entered")}
+                    onClick={() => {
+                      if (activeFilters.mealTypes.includes(mt)) {
+                        setActiveFilters({
+                          tags: activeFilters.tags,
+                          mealTypes: activeFilters.mealTypes.filter(
+                            (mealType) => mealType !== mt
+                          ),
+                        });
+                      } else {
+                        setActiveFilters({
+                          tags: activeFilters.tags,
+                          mealTypes: [...activeFilters.mealTypes, mt],
+                        });
+                      }
+                    }}
                   />
                   <label htmlFor={mt}>{mt}</label>
                 </CheckboxesContainer>
