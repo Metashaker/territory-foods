@@ -1,13 +1,13 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import logo from "./logo.svg";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import MealsPage from "./pages/Meals";
 import "./App.css";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={}/>
+        <Route path="/" element={MealsPage} />
       </Routes>
     </BrowserRouter>
   );
