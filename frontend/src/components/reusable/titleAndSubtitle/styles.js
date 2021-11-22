@@ -6,7 +6,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   margin: 4rem 0;
-
+  text-align: center;
   h1 {
     margin: 0;
     font-size: 1.8rem;
