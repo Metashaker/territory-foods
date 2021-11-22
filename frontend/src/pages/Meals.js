@@ -20,7 +20,6 @@ const MealsPage = () => {
   const [filteredMeals, setFilteredMeals] = useState([]);
 
   useEffect(() => {
-    console.log(activeFilters);
     const filtMeals = meals?.meals
       ?.map((meal) => {
         let tempMeals = [];

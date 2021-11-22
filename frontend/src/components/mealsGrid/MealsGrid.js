@@ -1,12 +1,10 @@
 import { MealsGridContainer, MealCard } from "./styles";
 
 const MealsGrid = ({ meals, filteredMeals }) => {
-  console.log(filteredMeals?.tags?.length, filteredMeals?.mealTypes?.length);
   return (
     <MealsGridContainer>
       {filteredMeals?.length === 0
         ? meals?.meals?.map((meal) => {
-            console.log(meals);
             return (
               <MealCard key={meal?.title}>
                 <img src={meal?.img} alt="meal" />
@@ -16,7 +14,6 @@ const MealsGrid = ({ meals, filteredMeals }) => {
             );
           })
         : filteredMeals?.map((meal) => {
-            console.log(meals);
             return (
               <MealCard key={meal?.chef}>
                 <img src={meal?.img} alt="meal" />
