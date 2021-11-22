@@ -13,6 +13,7 @@ const MealsGridContainer = styled.div`
     grid-template-columns: repeat(2, 1fr);
   }
   @media (max-width: 767px) {
+    margin: 0 auto;
     grid-template-columns: repeat(1, 1fr);
     grid-row-gap: 20px;
   }
@@ -22,13 +23,16 @@ const MealCard = styled.div`
   height: auto;
   width: 15rem;
   /* White */
-
   background: #ffffff;
   /* Steam */
   padding-bottom: 1rem;
   border: 1px solid #e5e5e5;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+
+    @media (max-width: 767px) {
+    justify-self: center;
+  }
 
   img {
     height: 10rem;
