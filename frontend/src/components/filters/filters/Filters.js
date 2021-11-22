@@ -1,5 +1,10 @@
 import { useState, useEffect } from "react";
-import { FiltersContainer, FilterButton, FiltersDropdown } from "./styles";
+import {
+  FiltersContainer,
+  FilterButton,
+  FiltersDropdown,
+  CheckboxesContainer,
+} from "./styles";
 import DownIcon from "../../../assets/tf-down.svg";
 
 const Filters = ({ meals }) => {
@@ -34,6 +39,7 @@ const Filters = ({ meals }) => {
     }
     setMealTypesOpen(!areMealTypesOpen);
   };
+
   return (
     <FiltersContainer>
       {console.log(mealTypes)}
@@ -41,13 +47,48 @@ const Filters = ({ meals }) => {
       <FilterButton onClick={toggleTagsDropdown} isFirst>
         <p>Dietary preferences</p>
         <img src={DownIcon} alt="Down icon" />
-        <FiltersDropdown isOpen={areTagsOpen} />
+        <FiltersDropdown isOpen={areTagsOpen}>
+          <h3>Dietary preferences</h3>
+          {tags &&
+            tags.map((tag) => {
+              return (
+                <CheckboxesContainer key={tag}>
+                  <input
+                    type="checkbox"
+                    id={tag}
+                    name={tag}
+                    value={tag}
+                    onClick={() => setTagsOpen(true)}
+                  />
+                  <label htmlFor={tag}>{tag}</label>
+                </CheckboxesContainer>
+              );
+            })}
+          ;
+        </FiltersDropdown>
       </FilterButton>
 
       <FilterButton onClick={toggleMealTypesDropdown}>
         <p>Meal type</p>
         <img src={DownIcon} alt="Down icon" />
-        <FiltersDropdown onCl isOpen={areMealTypesOpen} />
+        <FiltersDropdown isMeal isOpen={areMealTypesOpen}>
+          <h3>Meal type</h3>
+          {mealTypes &&
+            mealTypes.map((mt) => {
+              return (
+                <CheckboxesContainer key={mt}>
+                  <input
+                    type="checkbox"
+                    id={mt}
+                    name={mt}
+                    value={mt}
+                    onClick={() => console.log("entered")}
+                  />
+                  <label htmlFor={mt}>{mt}</label>
+                </CheckboxesContainer>
+              );
+            })}
+        </FiltersDropdown>
       </FilterButton>
     </FiltersContainer>
   );

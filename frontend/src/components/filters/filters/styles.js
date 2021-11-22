@@ -28,11 +28,36 @@ const FilterButton = styled.button`
 
 const FiltersDropdown = styled.div`
   display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   position: absolute;
-  transform: translate(6rem, 12rem);
-  height: 20.5rem;
+  padding: 1.5rem;
+  transform: ${({ isMeal }) =>
+    isMeal ? "translate(7.5rem,7.4rem)" : "translate(6rem, 10rem)"};
+  height: auto;
+  min-height: 10rem;
   width: 21.5rem;
-  background-color: red;
+  background: #ffffff;
+  border: 2px solid #e5e5e5;
+  box-sizing: border-box;
+  border-radius: 4px;
   z-index: 50;
+
+  h3 {
+    font-size: 1rem;
+    color: #333335;
+    font-weight: bold;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
 `;
-export { FiltersContainer, FilterButton, FiltersDropdown };
+
+const CheckboxesContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0.5rem 0;
+`;
+export { FiltersContainer, FilterButton, FiltersDropdown, CheckboxesContainer };
