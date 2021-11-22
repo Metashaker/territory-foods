@@ -1,12 +1,16 @@
+import { useQuery } from "@apollo/client";
+
 import Header from "../layout/header";
 import Footer from "../layout/footer";
 import Banner from "../components/reusable/banner";
 import TitleAndSubtitle from "../components/reusable/titleAndSubtitle";
 import Filters from "../components/filters/filters";
+import { GET_MEALS } from "../api/meals";
 
 import BannerURL from "../assets/tf-banner-darken.png";
 
 const MealsPage = () => {
+  const { data: meals } = useQuery(GET_MEALS);
   return (
     <div style={{ width: "100vw", overflowX: "hidden" }}>
       <Header />
