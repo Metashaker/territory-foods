@@ -6,8 +6,10 @@ const MealsGrid = ({ meals }) => {
       {meals &&
         meals.map((meal) => {
           return (
-            <MealCard key={meal.id}>
-              <p>Here</p>
+            <MealCard key={meal?.id}>
+              <img src={meal?.img} alt="meal" />
+              <h3>{meal?.title}</h3>
+              <p>{`by ${meal?.chef}`}</p>
             </MealCard>
           );
         })}

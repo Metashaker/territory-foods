@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 const MealsGridContainer = styled.div`
-  width: 100%;
+  width: 80%;
   padding: 0 10%;
   margin: 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(auto, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 15px;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -19,9 +19,36 @@ const MealsGridContainer = styled.div`
 `;
 
 const MealCard = styled.div`
-  height: 17.875rem;
+  height: auto;
   width: 15rem;
-  background-color: red;
+  /* White */
+
+  background: #ffffff;
+  /* Steam */
+  padding-bottom: 1rem;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  img {
+    height: 10rem;
+    width 100%;
+  }
+
+  h3 {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #333335;
+    margin: 0;
+  }
+
+  p {
+    margin: 0.5rem 1rem;
+    font-size: 0.8rem;
+    color: #606060;
+    font-weight: 500;
+  }
 `;
 
 export { MealsGridContainer, MealCard };
