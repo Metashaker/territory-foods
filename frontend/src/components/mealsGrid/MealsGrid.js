@@ -1,18 +1,27 @@
 import { MealsGridContainer, MealCard } from "./styles";
 
-const MealsGrid = ({ meals }) => {
+const MealsGrid = ({ meals, filteredMeals }) => {
   return (
     <MealsGridContainer>
-      {meals &&
-        meals.map((meal) => {
-          return (
-            <MealCard key={meal?.id}>
-              <img src={meal?.img} alt="meal" />
-              <h3>{meal?.title}</h3>
-              <p>{`by ${meal?.chef}`}</p>
-            </MealCard>
-          );
-        })}
+      {filteredMeals?.length === 0
+        ? meals?.meals?.map((meal) => {
+            return (
+              <MealCard key={meal?.title}>
+                <img src={meal?.img} alt="meal" />
+                <h3>{meal?.title}</h3>
+                <p>{`by ${meal?.chef}`}</p>
+              </MealCard>
+            );
+          })
+        : filteredMeals?.map((meal) => {
+            return (
+              <MealCard key={meal?.chef}>
+                <img src={meal?.img} alt="meal" />
+                <h3>{meal?.title}</h3>
+                <p>{`by ${meal?.chef}`}</p>
+              </MealCard>
+            );
+          })}
     </MealsGridContainer>
   );
 };

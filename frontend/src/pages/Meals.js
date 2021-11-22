@@ -20,7 +20,6 @@ const MealsPage = () => {
   const [filteredMeals, setFilteredMeals] = useState([]);
 
   useEffect(() => {
-    console.log(activeFilters);
     const filtMeals = meals?.meals
       ?.map((meal) => {
         let tempMeals = [];
@@ -66,7 +65,7 @@ const MealsPage = () => {
         setActiveFilters={setActiveFilters}
         activeFilters={activeFilters}
       />
-      <MealsGrid meals={filteredMeals} />
+      <MealsGrid filteredMeals={filteredMeals} meals={meals} />
       <Footer />
     </div>
   );
