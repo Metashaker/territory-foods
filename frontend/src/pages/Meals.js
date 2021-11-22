@@ -11,6 +11,7 @@ import BannerURL from "../assets/tf-banner-darken.png";
 
 const MealsPage = () => {
   const { data: meals } = useQuery(GET_MEALS);
+
   return (
     <div style={{ width: "100vw", overflowX: "hidden" }}>
       <Header />
@@ -23,7 +24,7 @@ const MealsPage = () => {
         title="nutrition is on the menu"
         subtitle="Our meals are designed by nutritionists and crafted by local chefs. Free of gluten, refined sugars or dairy* and responsibly sourced.  "
       />
-      <Filters />
+      <Filters meals={meals} />
       <Footer />
     </div>
   );
