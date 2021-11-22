@@ -1,11 +1,14 @@
-import Layout from "../layout/layout";
+import Header from "../layout/header";
+import Footer from "../layout/footer";
+import Banner from "../components/reusable/banner";
 
 const MealsPage = () => {
   return (
-    <Layout>
-      <p>Hello!</p>
-      <h1>Im here</h1>
-    </Layout>
+    <>
+      <Header />
+      <Banner />
+      <Footer />
+    </>
   );
 };
 
