@@ -4,6 +4,7 @@ module.exports = {
     es2021: true,
   },
   extends: [
+    "prettier",
     "plugin:react/recommended",
     "airbnb",
     "eslint:recommended",
@@ -17,8 +18,10 @@ module.exports = {
     ecmaVersion: 13,
     sourceType: "module",
   },
-  plugins: ["react"],
+  plugins: ["react", "prettier"],
   rules: {
+    "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
     semi: "off",
+    "react/function-component-definition": "off",
   },
 };
