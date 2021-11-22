@@ -1,17 +1,11 @@
-function MealsPage() {
+import Layout from "../layout/layout";
+
+const MealsPage = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        width: "100vw",
-        height: "100vh",
-        backgroundColor: "red",
-      }}
-    >
-      Hello WOrkd
-    </div>
+    <Layout>
+      <p>Hello!</p>
+    </Layout>
   );
-}
+};
 
 export default MealsPage;
