@@ -8,8 +8,8 @@ A technical challenge for Territory Foods made with love and patience. It displa
 
 ## Getting started
 1. Clone the repository locally
-2. Move to the backend folder in the terminal, and run `yarn install`
-3. Start the development server at the backend root folder running `yarn dev`. It should start at port 4000.
+2. Move to the backend folder in the terminal, and run `npm install`
+3. Start the development server at the backend root folder running `npm run dev`. It should start at port 4000.
 4. Open another terminal, move to the frontend folder in the terminal, and run `yarn install`
 5. Start the develop aht the frontend root folder running `yarn start`
 
