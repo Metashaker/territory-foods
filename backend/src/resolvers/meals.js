@@ -36,7 +36,6 @@ const resolvers = {
               }
               streamResults[i].tags = tagBag
             }
-            console.log(streamResults.length)
             resolve(streamResults)
             if (streamResults.length === 0) {
               reject(new Error('No elements found'))
