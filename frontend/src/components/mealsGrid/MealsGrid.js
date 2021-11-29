@@ -1,6 +1,7 @@
 import { MealsGridContainer, MealCard } from "./styles";
 
 const MealsGrid = ({ meals, filteredMeals }) => {
+  console.log(meals);
   return (
     <MealsGridContainer>
       {filteredMeals?.length === 0
