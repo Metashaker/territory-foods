@@ -47,9 +47,9 @@ const MealsPage = () => {
       .filter(Boolean);
     setFilteredMeals(filtMeals);
   }, [activeFilters, meals]);
-
   return (
     <div style={{ width: "100vw", overflowX: "hidden" }}>
+      {console.log(filteredMeals)}
       <Header />
       <Banner
         imageURL={BannerURL}

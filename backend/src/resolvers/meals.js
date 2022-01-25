@@ -1,6 +1,7 @@
 import fs from "fs"
+import csv from "csv-parser"
 import path from "path"
-import { CSVToJSON } from '../utils/data-parsing'
+
 
 const resolvers = {
   Query: {
@@ -13,19 +14,33 @@ const resolvers = {
           return data
         })
         //filter elements without titles (empty elements)
-      meals = CSVToJSON(meals).filter(meal => meal?.title)
-      //filter empty tags, and fixes data type from string to array from tags with strings in them
-      const regExp = /[a-zA-Z]/g;
-      meals = meals.map(meal => {
-        if (meal.tags, regExp.test(meal.tags)) {
-          meal.tags = meal.tags.match(/'([^']+)'/)[1].split(1,-1)
-        }
-        if (!regExp.test(meal.tags)) {
-          meal.tags = []
-        }
-        return meal
-      })
-      return meals
+        const streamResults = []
+        return new Promise((resolve, reject) => {
+          fs.createReadStream(path.join(`${__dirname}/../db/`, "meals.csv"))
+          .pipe(csv())
+          .on('data', (data) => streamResults.push(data))
+          .on('end', () => {
+            for (let i = 0; i < streamResults.length; i++) {
+              streamResults[i].tags = streamResults[i].tags.split(",")
+              //console.log(streamResults[i].tags)
+              const tagBag = []
+              for (let j = 0; j < streamResults[i].tags.length; j++) {
+                if (streamResults[i].tags[j].length > 2) {
+                  streamResults[i].tags[j] = streamResults[i].tags[j].replaceAll(/[\[\]']+/g, "")
+                  tagBag.push(streamResults[i].tags[j].trim())
+                }
+                if (streamResults[i].tags[j].length < 2) {
+                  streamResults[i].tags[j] = []
+                }
+              }
+              streamResults[i].tags = tagBag
+            }
+            resolve(streamResults)
+            if (streamResults.length === 0) {
+              reject(new Error('No elements found'))
+            }
+          })
+        }).then(() => streamResults).catch(e => console.log(e))
     }
   },
   //Mutation: {}
